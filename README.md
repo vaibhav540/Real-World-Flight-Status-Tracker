@@ -18,6 +18,7 @@ _Masai School_
 
 - **App Deployment:** [Flight Tracker App](https://author-vaibhavmore-flighttracker.netlify.app/)
 - **Author GitHub Profile:** [Vaibhav's GitHub](https://github.com/vaibhav540)
+- **Project Presentation Video:** [Project Presentation](https://drive.google.com/file/d/17QoxO8E2C6CgNmbq4ZIdxd-7B_HFX7QU/view?usp=sharing)
 
 ---
 
