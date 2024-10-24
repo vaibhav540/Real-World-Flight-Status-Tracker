@@ -49,19 +49,49 @@ const FlightTable: React.FC<FlightTableProps> = ({ flights }) => {
       <Table variant="striped" colorScheme="teal" size={["sm", "md", "lg"]}>
         <Thead bg={headerBg}>
           <Tr>
-            <Th fontSize={["xs", "sm", "md"]}>Flight Number</Th>
-            <Th fontSize={["xs", "sm", "md"]}>Airline</Th>
-            <Th fontSize={["xs", "sm", "md"]}>Origin</Th>
-            <Th fontSize={["xs", "sm", "md"]}>Destination</Th>
-            <Th fontSize={["xs", "sm", "md"]}>Departure Time</Th>
-            <Th fontSize={["xs", "sm", "md"]}>Status</Th>
+            <Th
+              fontSize={["xs", "sm", "md"]}
+              display={{ base: "table-cell", md: "table-cell" }}
+            >
+              Flight
+            </Th>
+            <Th
+              fontSize={["xs", "sm", "md"]}
+              display={{ base: "none", md: "table-cell" }}
+            >
+              Airline
+            </Th>
+            <Th
+              fontSize={["xs", "sm", "md"]}
+              display={{ base: "table-cell", md: "table-cell" }}
+            >
+              Origin
+            </Th>
+            <Th
+              fontSize={["xs", "sm", "md"]}
+              display={{ base: "none", md: "table-cell" }}
+            >
+              Destination
+            </Th>
+            <Th
+              fontSize={["xs", "sm", "md"]}
+              display={{ base: "none", lg: "table-cell" }} // Show on large screens only
+            >
+              Departure Time
+            </Th>
+            <Th
+              fontSize={["xs", "sm", "md"]}
+              display={{ base: "table-cell", md: "table-cell" }}
+            >
+              Status
+            </Th>
           </Tr>
         </Thead>
         <Tbody>
           {flights.length > 0 ? (
             flights.map((flight) => (
               <Tr key={flight.flightNumber} _hover={{ bg: "gray.50" }}>
-                <Td>
+                <Td display={{ base: "table-cell", md: "table-cell" }}>
                   <Button
                     as={Link}
                     to={`/flight-detail/${flight.flightNumber}`}
@@ -73,11 +103,21 @@ const FlightTable: React.FC<FlightTableProps> = ({ flights }) => {
                     {flight.flightNumber}
                   </Button>
                 </Td>
-                <Td>{flight.airline}</Td>
-                <Td>{flight.origin}</Td>
-                <Td>{flight.destination}</Td>
-                <Td>{new Date(flight.departureTime).toLocaleString()}</Td>
-                <Td>
+                <Td display={{ base: "none", md: "table-cell" }}>
+                  {flight.airline}
+                </Td>
+                <Td display={{ base: "table-cell", md: "table-cell" }}>
+                  {flight.origin}
+                </Td>
+                <Td display={{ base: "none", md: "table-cell" }}>
+                  {flight.destination}
+                </Td>
+                <Td display={{ base: "none", lg: "table-cell" }}>
+                  {" "}
+                  {/* Show only on large screens */}
+                  {new Date(flight.departureTime).toLocaleString()}
+                </Td>
+                <Td display={{ base: "table-cell", md: "table-cell" }}>
                   <Badge
                     colorScheme={
                       flight.status === "On Time"

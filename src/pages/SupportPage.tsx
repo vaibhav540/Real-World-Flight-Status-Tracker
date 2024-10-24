@@ -172,7 +172,7 @@ const Support: React.FC = () => {
             For immediate assistance, you can also contact us at
             <Text as="span" fontWeight="bold">
               {" "}
-              support@flightapp.com
+              support@flightTracker.com
             </Text>
             .
           </Text>

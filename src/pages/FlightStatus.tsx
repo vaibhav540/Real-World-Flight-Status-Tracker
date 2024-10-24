@@ -3,7 +3,7 @@ import { Box, Heading } from "@chakra-ui/react";
 import FlightTable from "../components/FlightTable";
 import SearchFlight from "../components/SearchFlight";
 import { useFlightStatus } from "../hooks/useFlightStatus";
-import "bootstrap/dist/css/bootstrap.min.css";
+// import "bootstrap/dist/css/bootstrap.min.css";
 
 const FlightStatus: React.FC = () => {
   const flights = useFlightStatus();
@@ -13,13 +13,13 @@ const FlightStatus: React.FC = () => {
   };
 
   return (
-    <div className="container-fluid">
-      <Box p={6}>
-        <Heading mb={6}>Flight Status</Heading>
-        <SearchFlight onSearch={handleSearch} />
-        <FlightTable flights={flights} />
-      </Box>
-    </div>
+    // <div className="container-fluid">
+    <Box p={6}>
+      <Heading mb={6}>Flight Status</Heading>
+      <SearchFlight onSearch={handleSearch} />
+      <FlightTable flights={flights} />
+    </Box>
+    // </div>
   );
 };
 
